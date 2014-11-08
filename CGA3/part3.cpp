@@ -11,7 +11,7 @@ int number_of_stacks = 80;
 int shader_mode = 1;  
 
 float t  = 0;  // the time parameter (incremented in the idle-function)
-float speed = 0.05;  // initial rotation speed of the animation (can be changed by pressing +/-)
+float speed = 0.01;  // initial rotation speed of the animation (can be changed by pressing +/-)
 
 GLuint SunShader; // the shader
 
