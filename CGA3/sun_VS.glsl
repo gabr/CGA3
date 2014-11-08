@@ -1,3 +1,6 @@
+// Arkadiusz Gabrys qe83mepi
+// Agnieszka Zacher by57zeja
+
 #version 120
 
 uniform float Time;
