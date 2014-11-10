@@ -32,12 +32,6 @@ void initGL() {
   
   // create the shaders (the functions are defined in helper.h)
   createProgram_VF("sun_VS.glsl","sun_FS.glsl",&SunShader);
-  
-  GLint location;
-  glUseProgram(SunShader);
-  location = glGetUniformLocation(SunShader, "cameraPos");
-  glUniform3f(location, 50.0, 50.0, -50.0);
-
 }
 
 void reshape(int w, int h)

@@ -4,7 +4,6 @@
 #version 120
 
 uniform float Time;
-uniform vec3 cameraPos;
 
 varying vec4 phase;
 varying vec3 vertexNormal;
@@ -18,7 +17,9 @@ float rand(vec2 n)
 void main()
 {
     vertexNormal = normalize(gl_Normal);
-    viewDirection = normalize(cameraPos - gl_Vertex.xyz);
+
+    vec4 tmp = normalize(vec4(0.0) - (gl_ModelViewMatrix * gl_Vertex));
+    viewDirection = (transpose(gl_ModelViewMatrix) * tmp).xyz;
 
     vec3 shiftTmp = gl_Normal * sin(rand(gl_Normal.xy) + Time);
     phase = abs(vec4(shiftTmp.x, shiftTmp.y, shiftTmp.z, 0.0));
